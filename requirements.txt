@@ -1,0 +1,33 @@
+# Core Scientific Computing
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+scikit-learn>=1.2.0
+statsmodels>=0.14.0
+
+# Deep Learning Frameworks
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+tensorflow>=2.12.0
+
+# Computer Vision & Image Processing
+Pillow>=9.5.0
+opencv-python>=4.7.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# NLP & Multimodal
+transformers>=4.30.0
+nltk>=3.8.0
+pycocoevalcap>=1.2
+hazm>=0.7.0
+arabic-reshaper>=3.0.0
+python-bidi>=0.4.2
+
+# Adversarial Machine Learning
+torchattacks>=3.4.0
+
+# Utilities & Progress
+tqdm>=4.65.0
+jupyter>=1.0.0

@@ -1,0 +1,41 @@
+# Python & Jupyter
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Datasets & Large Archives
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.parquet
+*.pkl
+*.pickle
+*.npz
+*.npy
+CamVid-main/
+archive/
+
+# Deep Learning Checkpoints & Weights
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.h5
+*.keras
+
+# Environment & Virtualenv
+.env
+.venv
+env/
+venv/
+ENV/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
