@@ -67,12 +67,12 @@ Neural-Networks-and-Deep-Learning/
 
 | Module | Core Architectures & Methods | Datasets | Key Quantitative Results | Documentation & Reports |
 | :--- | :--- | :--- | :--- | :--- |
-| **[HW01](HW01-Foundations-Perceptron-Adaline-MLP/)** | Perceptron, Adaline, Deep MLP, Autoencoder Bottlenecks | IRIS, Credit Card Fraud, Concrete, MNIST | PR-AUC: **$0.831$**, Concrete $R^2$: **$0.924$**, MNIST Linear: **$97.8\%$** | [README](HW01-Foundations-Perceptron-Adaline-MLP/README.md) · [LaTeX Report](HW01-Foundations-Perceptron-Adaline-MLP/report/HW01_Report.tex) |
-| **[HW02](HW02-CNN-Covid19-and-Transfer-Learning/)** | Deep Multi-Scale CNN, Pretrained VGG-16, Linear/RBF SVM | COVID-19 Radiography, Vehicle Classification | COVID Recall: **$98.1\%$**, Macro Acc: **$96.4\%$**, SVM Val Acc: **$90.7\%$** | [README](HW02-CNN-Covid19-and-Transfer-Learning/README.md) · [LaTeX Report](HW02-CNN-Covid19-and-Transfer-Learning/report/HW02_Report.tex) |
-| **[HW03](HW03-CamVid-Semantic-Segmentation/)** | Depthwise Separable Convolutions, Dilated U-Net | CamVid Driving (12 Classes) | mIoU: **$62.8\%$**, Pixel Acc: **$88.3\%$**, $8.2\times$ MAC Reduction | [README](HW03-CamVid-Semantic-Segmentation/README.md) · [LaTeX Report](HW03-CamVid-Semantic-Segmentation/report/HW03_Report.tex) |
-| **[HW04](HW04-Sequence-Modeling-and-Clinical-NLP/)** | ResNet-50 + LSTM Captioner, Stacked GRU, ADF & ACF/PACF | Flickr8k, ICU Clinical Time-Series | BLEU-1: **$0.612$**, BLEU-4: **$0.208$**, Clinical RMSE: **$0.084$** | [README](HW04-Sequence-Modeling-and-Clinical-NLP/README.md) · [LaTeX Report](HW04-Sequence-Modeling-and-Clinical-NLP/report/HW04_Report.tex) |
-| **[HW05](HW05-Vision-Transformers-and-ZeroShot/)** | Vision Transformers (ViT), Zero-Shot CLIP, FGSM, PGD | Agronomy Crop Pathology, Multi-Modal Benchmarks | ViT Val Acc: **$94.7\%$** ($+3.2\%$ over CNN), CLIP Clean: **$82.4\%$** | [README](HW05-Vision-Transformers-and-ZeroShot/README.md) · [LaTeX Report](HW05-Vision-Transformers-and-ZeroShot/report/HW05_Report.tex) |
-| **[HW06](HW06-Autoencoders-and-Domain-Adaptation/)** | DANN (Gradient Reversal Layer), Variational Autoencoders (EndoVAE) | MNIST $\to$ MNIST-M, Endoscopy Colonoscopy Frames | Adaptation Acc: **$82.6\%$** ($+28.4\%$), EndoVAE SSIM: **$0.871$**, MSE: **$0.012$** | [README](HW06-Autoencoders-and-Domain-Adaptation/README.md) · [LaTeX Report](HW06-Autoencoders-and-Domain-Adaptation/report/HW06_Report.tex) |
+| **[HW01](HW01-Foundations-Perceptron-Adaline-MLP/)** | Perceptron, Adaline, Deep MLP, Autoencoder Bottlenecks | IRIS, Credit Card Fraud, Concrete, MNIST | Fraud Acc: **$94.93\%$** (Rec: $89.86\%$), Concrete MAE: **$7.61\text{ MPa}$**, MNIST Latent Acc: **$81.50\%$** | [README](HW01-Foundations-Perceptron-Adaline-MLP/README.md) · [LaTeX Report](HW01-Foundations-Perceptron-Adaline-MLP/report/HW01_Report.tex) |
+| **[HW02](HW02-CNN-Covid19-and-Transfer-Learning/)** | Deep Multi-Scale CNN, Pretrained VGG-16, Linear/RBF SVM | COVID-19 Radiography, Vehicle Classification | COVID Acc: **$95.61\%$** (Recall: $98.04\%$), VGG-16 FT Acc: **$72.36\%$** | [README](HW02-CNN-Covid19-and-Transfer-Learning/README.md) · [LaTeX Report](HW02-CNN-Covid19-and-Transfer-Learning/report/HW02_Report.tex) |
+| **[HW03](HW03-CamVid-Semantic-Segmentation/)** | Depthwise Separable Convolutions, Dilated U-Net | CamVid Driving (12 Classes) | Val Acc: **$88.05\%$**, Val Dice: **$60.13\%$**, Val mIoU: **$50.08\%$**, $8.2\times$ MAC Reduction | [README](HW03-CamVid-Semantic-Segmentation/README.md) · [LaTeX Report](HW03-CamVid-Semantic-Segmentation/report/HW03_Report.tex) |
+| **[HW04](HW04-Sequence-Modeling-and-Clinical-NLP/)** | ResNet-50 + LSTM Captioner, Stacked GRU, ADF & ACF/PACF | Flickr8k, ICU Clinical Time-Series | Beam BLEU-1: **$0.2139$**, BLEU-4: **$0.4152$**, Clinical ICU Models | [README](HW04-Sequence-Modeling-and-Clinical-NLP/README.md) · [LaTeX Report](HW04-Sequence-Modeling-and-Clinical-NLP/report/HW04_Report.tex) |
+| **[HW05](HW05-Vision-Transformers-and-ZeroShot/)** | Vision Transformers (ViT), Zero-Shot CLIP, FGSM, PGD | Agronomy Crop Pathology, Multi-Modal Benchmarks | ViT Val Acc: **$97.0\%$** ($+7.0\%$ over CNN $90.0\%$), CLIP Clean: **$87.83\%$** (Defended: $85.39\%$) | [README](HW05-Vision-Transformers-and-ZeroShot/README.md) · [LaTeX Report](HW05-Vision-Transformers-and-ZeroShot/report/HW05_Report.tex) |
+| **[HW06](HW06-Autoencoders-and-Domain-Adaptation/)** | DANN (Gradient Reversal Layer), Variational Autoencoders (EndoVAE) | MNIST $\to$ MNIST-M, Endoscopy Colonoscopy Frames | MNIST: **$98.98\%$** vs MNIST-M: **$56.63\%$**, EndoVAE SSIM: **$0.482$**, Polyp Acc: **$98.75\%$** (AUC: $0.9962$) | [README](HW06-Autoencoders-and-Domain-Adaptation/README.md) · [LaTeX Report](HW06-Autoencoders-and-Domain-Adaptation/report/HW06_Report.tex) |
 | **[HWE](HWE-Adversarial-Robustness-and-Multimodal-Captioning/)** | ResNet-18 vs. ViT Adversarial Probing, Persian CNN-LSTM Captioner | CIFAR-100, Oxford Flowers-102, Persian Captions | ViT Robustness: **$33.4\%$** vs. ResNet **$24.1\%$** ($\\epsilon=8/255$), Persian BLEU-1: **$0.548$** | [README](HWE-Adversarial-Robustness-and-Multimodal-Captioning/README.md) · [LaTeX Report](HWE-Adversarial-Robustness-and-Multimodal-Captioning/report/HWE_Report.tex) |
 
 ---
@@ -82,32 +82,32 @@ Neural-Networks-and-Deep-Learning/
 ### Module 1: Foundations of Neural Networks
 - **Widrow-Hoff Learning Rule**: Optimizes pre-activation continuous quadratic loss $J(\mathbf{w}) = \frac{1}{2} \sum_i (y_i - \mathbf{w}^T \mathbf{x}_i)^2$, yielding smooth gradient descent updates $\Delta \mathbf{w} = \eta \sum_i (y_i - \mathbf{w}^T \mathbf{x}_i) \mathbf{x}_i$ in contrast to discrete Perceptron thresholding.
 - **Extreme Class Imbalance**: Addresses $0.172\%$ fraud occurrence via Weighted Binary Cross-Entropy with inverse frequency weights $w_c = \frac{N}{2 N_c}$ and decision threshold tuning against Precision-Recall curves.
-- **Self-Supervised Autoencoders**: Compresses $784$-dimensional digits to a $64$-dimensional bottleneck. Demonstrates that freezing encoder features enables downstream linear classification with $97.8\%$ accuracy.
+- **Self-Supervised Autoencoders**: Compresses $784$-dimensional digits to a $64$-dimensional bottleneck. Demonstrates that freezing encoder features enables downstream linear classification with $81.50\%$ accuracy ($75.97\%$ with 16-dim bottleneck).
 
 ### Module 2: Deep CNNs & Transfer Learning
-- **Spatial Inductive Bias**: Employs weight sharing, local receptive fields, and translational equivariance to diagnose pulmonary diseases from Chest X-Rays with $98.1\%$ sensitivity.
-- **Penultimate Feature Transfer**: Extracts $4096$-dimensional feature vectors from frozen VGG-16 layers and trains maximal-margin Support Vector Machines, achieving a $+12.3\%$ accuracy margin over training from scratch.
+- **Spatial Inductive Bias**: Employs weight sharing, local receptive fields, and translational equivariance to diagnose pulmonary diseases from Chest X-Rays with $95.61\%$ test accuracy and $98.04\%$ COVID sensitivity ($98.39\%$ precision).
+- **Penultimate Feature Transfer**: Extracts $4096$-dimensional feature vectors from frozen VGG-16 layers and trains maximal-margin Support Vector Machines, achieving up to $72.36\%$ accuracy (vs $50.71\%$ for CNN from scratch).
 
 ### Module 3: Dense Semantic Segmentation on CamVid
 - **Depthwise Separable Factorization**: Decomposes $3 \times 3$ convolutions into depthwise spatial filtering and $1 \times 1$ pointwise channel projection, reducing computational complexity by $8.2\times$:
   $$\frac{\text{Cost}_{\text{separable}}}{\text{Cost}_{\text{standard}}} = \frac{1}{N} + \frac{1}{D_K^2} \approx \frac{1}{9}$$
-- **100-Epoch Optimization**: Implements cosine learning rate annealing and class-weighted cross-entropy to achieve $62.8\%$ mIoU across 12 urban categories.
+- **100-Epoch Optimization**: Implements cosine learning rate annealing and class-weighted cross-entropy to achieve $88.05\%$ pixel accuracy, $60.13\%$ Dice, and $50.08\%$ mIoU on validation driving scenes (training mIoU $78.62\%$).
 
 ### Module 4: Sequence Modeling & Clinical Time-Series
-- **Multimodal Language Decoders**: Pairs ResNet-50 visual backbones with autoregressive LSTM decoders using teacher forcing, achieving a test BLEU-1 of $0.612$ on Flickr8k.
+- **Multimodal Language Decoders**: Pairs ResNet-50 visual backbones with autoregressive LSTM decoders using teacher forcing, achieving a test BLEU-1 of $0.2139$ and BLEU-4 of $0.4152$ with beam search ($k=5$) on Flickr8k.
 - **Clinical ICU Telemetry**: Applies Augmented Dickey-Fuller (ADF) stationarity testing and ACF/PACF autocorrelation analysis, followed by stacked GRUs for multi-step vital sign trajectory forecasting (RMSE $= 0.084$).
 
 ### Module 5: Vision Transformers & Zero-Shot CLIP
-- **Self-Attention Mechanics**: Tokenizes images into $16 \times 16$ non-overlapping patches, maps tokens through Multi-Head Self-Attention (MHSA), and demonstrates $+3.2\%$ diagnostic accuracy gains on agricultural pathology over CNNs.
-- **Adversarial Vulnerability of CLIP**: Probes zero-shot contrastive embeddings under FGSM and PGD attacks, discovering an acute accuracy collapse ($82.4\% \to 11.2\%$ at $\epsilon = 8/255$).
+- **Self-Attention Mechanics**: Tokenizes images into $16 \times 16$ non-overlapping patches, maps tokens through Multi-Head Self-Attention (MHSA), and demonstrates $+7.0\%$ diagnostic accuracy gains ($97.0\%$ vs $90.0\%$ for CNN) on agricultural pathology.
+- **Adversarial Vulnerability of CLIP**: Probes zero-shot contrastive embeddings under FGSM and PGD attacks, discovering an acute accuracy collapse (from $87.83\%$ clean to $49.87\%$ under PGD, restored to $85.39\%$ via TeCoA adversarial fine-tuning).
 
 ### Module 6: Unsupervised Domain Adaptation & EndoVAE
-- **Domain-Adversarial Neural Networks (DANN)**: Employs a Gradient Reversal Layer (GRL) $\mathcal{R}(\mathbf{x}) = \mathbf{x}, \frac{d\mathcal{R}}{d\mathbf{x}} = -\lambda \mathbf{I}$ to align representations across domains without target labels, boosting target accuracy from $54.2\%$ to $82.6\%$.
-- **EndoVAE**: Derives the Evidence Lower Bound (ELBO) with Gaussian priors and reparameterization $\mathbf{z} = \boldsymbol{\mu} + \boldsymbol{\sigma} \odot \boldsymbol{\epsilon}$ to reconstruct colonoscopy polyp frames (SSIM $= 0.871$).
+- **Domain-Adversarial Neural Networks (DANN)**: Employs a Gradient Reversal Layer (GRL) $\mathcal{R}(\mathbf{x}) = \mathbf{x}, \frac{d\mathcal{R}}{d\mathbf{x}} = -\lambda \mathbf{I}$ to align representations across domains without target labels, analyzing the $42.35\%$ performance drop from clean MNIST ($98.98\%$) to stylized MNIST-M ($56.63\%$).
+- **EndoVAE**: Derives the Evidence Lower Bound (ELBO) with Gaussian priors and reparameterization $\mathbf{z} = \boldsymbol{\mu} + \boldsymbol{\sigma} \odot \boldsymbol{\epsilon}$ to reconstruct colonoscopy polyp frames (Mean PSNR $17.38\text{ dB}$, SSIM $0.482$) with $98.75\%$ downstream polyp detection accuracy.
 
 ### Module 7 (HWE): Adversarial Robustness & Persian Captioning
 - **Empirical Threat Modeling**: Demonstrates that Vision Transformers retain higher residual robustness than CNNs under low perturbation budgets due to non-local self-attention.
-- **Persian Vision-Language Pipeline**: Overcomes Persian morphology, cursive RTL script rendering, and ZWNJ handling via Hazm and bidirectional reshapers, producing an end-to-end caption generator (smoothed BLEU-1: $0.548$).
+- **Persian Vision-Language Pipeline**: Overcomes Persian morphology, cursive RTL script rendering, and ZWNJ handling via Hazm and bidirectional reshapers, producing an end-to-end caption generator (BLEU-1: $0.2445$, BLEU-4: $0.0461$).
 
 ---
 

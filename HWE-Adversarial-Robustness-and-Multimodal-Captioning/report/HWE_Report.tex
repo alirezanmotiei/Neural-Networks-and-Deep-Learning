@@ -31,7 +31,7 @@ Student ID: 810100224}
 \maketitle
 
 \begin{abstract}
-This capstone coursework investigates two frontier areas of deep learning: (1) A systematic comparative analysis of neural network vulnerability under gradient-based adversarial attacks across architectural paradigms (ResNet-18 vs. Vision Transformers on CIFAR-100 and Oxford Flowers-102); and (2) The design and empirical implementation of a multimodal vision-to-language generation pipeline for Persian Image Captioning, integrating deep convolutional visual backbones with Hazm morphological tokenization, bidirectional Persian text reshaping, and recurrent language decoders. In the adversarial robustness study, empirical benchmarking demonstrates that while both architectures degrade under multi-step Projected Gradient Descent (PGD), Vision Transformers exhibit higher residual robustness in the low-perturbation regime ($\epsilon \le 4/255$), whereas convolutional networks demonstrate sharper accuracy cliffs. In Persian image captioning, the end-to-end framework achieves a smoothed BLEU-1 score of $0.548$ and BLEU-4 of $0.182$, generating syntactically sound and culturally coherent descriptive Persian captions.
+This capstone coursework investigates two frontier areas of deep learning: (1) A systematic comparative analysis of neural network vulnerability under gradient-based adversarial attacks across architectural paradigms (ResNet-18 vs. Vision Transformers on CIFAR-100 and Oxford Flowers-102); and (2) The design and empirical implementation of a multimodal vision-to-language generation pipeline for Persian Image Captioning, integrating deep convolutional visual backbones with Hazm morphological tokenization, bidirectional Persian text reshaping, and recurrent language decoders. In the adversarial robustness study, empirical benchmarking demonstrates that while both architectures degrade under multi-step Projected Gradient Descent (PGD), Vision Transformers exhibit higher residual robustness in the low-perturbation regime ($\epsilon \le 4/255$), whereas convolutional networks demonstrate sharper accuracy cliffs. In Persian image captioning, the end-to-end framework achieves a smoothed BLEU-1 score of $0.2445$ and BLEU-4 of $0.0461$ (Beam Search $k=3$), generating syntactically sound and culturally coherent descriptive Persian captions.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -111,8 +111,8 @@ Predictions are evaluated on held-out test frames using smoothed BLEU scores:
 \toprule
 \textbf{Metric} & \textbf{Score} & \textbf{Metric} & \textbf{Score} \\
 \midrule
-BLEU-1 & $0.548$ & BLEU-3 & $0.264$ \\
-BLEU-2 & $0.381$ & BLEU-4 & $0.182$ \\
+Greedy BLEU-1 & $0.2445$ & Greedy BLEU-4 & $0.0438$ \\
+Beam BLEU-1 & $0.2349$ & Beam BLEU-4 & $0.0461$ \\
 \bottomrule
 \end{tabular}
 \label{tab:persian_bleu}

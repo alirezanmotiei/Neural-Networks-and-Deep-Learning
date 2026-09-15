@@ -10,7 +10,7 @@ This module addresses sequential credit assignment across two disparate domains:
 - **Encoder-Decoder Architecture**:
   - Vision Encoder: Pretrained ResNet-50 extracting $2048$-dimensional spatial feature vectors.
   - Language Decoder: Word embedding projection followed by deep LSTM units with teacher forcing.
-- **Inference & Scoring**: Greedy decoding and beam search evaluated with BLEU-1 through BLEU-4 metrics (BLEU-1: $0.612$, BLEU-4: $0.208$).
+- **Inference & Scoring**: Greedy decoding and beam search evaluated with BLEU-1 through BLEU-4 metrics: Greedy BLEU-1: $0.1889$, BLEU-4: $0.2963$; Beam Search ($k=5$) BLEU-1: $0.2139$, BLEU-4: $0.4152$.
 
 ### 2. Clinical ICU Time-Series Modeling (`NNDL_HW04_Q2_Clinical_TimeSeries.ipynb`)
 - **Statistical Preprocessing**:

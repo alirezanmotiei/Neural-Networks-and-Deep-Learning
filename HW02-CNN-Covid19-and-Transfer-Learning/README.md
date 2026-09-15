@@ -12,14 +12,14 @@ This module explores convolutional feature hierarchies, spatial inductive biases
   - 4 progressive convolutional blocks with Batch Normalization and spatial MaxPooling.
   - SpatialDropout2D and dense Dropout ($p=0.5$) for aggressive regularization against radiograph scanner artifacts.
   - Multi-scale data augmentation (flips, affine rotations $\pm 15^\circ$, zoom).
-- **Performance**: $96.4\%$ macro-averaged accuracy, $98.1\%$ sensitivity for COVID-19 detection.
+- **Performance**: $95.61\%$ test accuracy, $98.39\%$ precision and $98.04\%$ recall for COVID-19 detection (F1-score $98.21\%$).
 
 ### 2. Vehicle Classification via Pre-Trained VGG-16 + SVM (`NNDL_HW02_Q2_VGG16_SVM_Vehicle.ipynb`)
 - **Transfer Learning Formulation**: Reusing universal visual primitives learned from ImageNet.
 - **Pipeline**:
   - Extracting $4096$-dimensional penultimate representations from frozen VGG-16 layers.
   - Training maximum-margin Support Vector Machines (Linear and RBF kernels).
-- **Benchmarking**: Yields a $+12.3\%$ validation accuracy improvement over training CNNs from scratch under limited training sample constraints.
+- **Benchmarking**: Achieves test accuracy up to $72.36\%$ (vs $50.71\%$ for scratch CNN baseline), demonstrating strong transfer under small-sample constraints.
 
 ---
 

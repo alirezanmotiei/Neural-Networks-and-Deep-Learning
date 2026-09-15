@@ -31,7 +31,7 @@ Student ID: 810100224}
 \maketitle
 
 \begin{abstract}
-Convolutional Neural Networks (CNNs) exploit spatial inductive biases---namely local receptive fields, shared kernel parameters, and translational equivariance---to achieve state-of-the-art visual pattern recognition. In this work, we investigate two practical computer vision challenges: (1) Automated diagnostic triage of COVID-19, Normal, and Viral Pneumonia from Chest X-Ray radiography images using custom deep convolutional architectures; and (2) Transfer learning and inductive feature reuse utilizing pre-trained VGG-16 backbones coupled with linear and RBF Support Vector Machines (SVM) for fine-grained vehicle classification. On the COVID-19 radiography benchmark, our engineered CNN attains $96.4\%$ macro-averaged accuracy with a sensitivity of $98.1\%$ for COVID-19 cases. In vehicle classification, extracting $4096$-dimensional penultimate embeddings from pre-trained VGG-16 and training an SVM margin classifier yields a substantial $12.3\%$ top-1 accuracy gain over training convolutional networks from random initialization, confirming the efficacy of deep representation transfer.
+Convolutional Neural Networks (CNNs) exploit spatial inductive biases---namely local receptive fields, shared kernel parameters, and translational equivariance---to achieve state-of-the-art visual pattern recognition. In this work, we investigate two practical computer vision challenges: (1) Automated diagnostic triage of COVID-19, Normal, and Viral Pneumonia from Chest X-Ray radiography images using custom deep convolutional architectures; and (2) Transfer learning and inductive feature reuse utilizing pre-trained VGG-16 backbones coupled with linear and RBF Support Vector Machines (SVM) for fine-grained vehicle classification. On the COVID-19 radiography benchmark, our engineered CNN attains $95.61\%$ test accuracy with a precision of $98.39\%$ and recall of $98.04\%$ for COVID-19 cases (F1-score of $98.21\%$). In vehicle classification, extracting $4096$-dimensional penultimate embeddings from pre-trained VGG-16 and training an SVM margin classifier yields a substantial $12.3\%$ top-1 accuracy gain over training convolutional networks from random initialization, confirming the efficacy of deep representation transfer.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -74,9 +74,9 @@ Data augmentation is enforced via stochastic horizontal flips, affine rotations 
 \subsection{Quantitative Results}
 As shown in Fig.~\ref{fig:covid_cm}, the model achieves:
 \begin{itemize}
-    \item COVID-19 Class: Precision $97.2\%$, Recall $98.1\%$, F1-Score $97.6\%$.
-    \item Normal Class: Precision $95.8\%$, Recall $96.0\%$, F1-Score $95.9\%$.
-    \item Viral Pneumonia: Precision $96.1\%$, Recall $95.0\%$, F1-Score $95.5\%$.
+    \item COVID-19 Class: Precision $98.39\%$, Recall $98.04\%$, F1-Score $98.21\%$.
+    \item Normal Class: Precision $93.93\%$, Recall $93.43\%$, F1-Score $93.68\%$.
+    \item Viral Pneumonia: Precision $94.54\%$, Recall $95.38\%$, F1-Score $94.96\%$.
 \end{itemize}
 Macro-averaged accuracy reaches $96.4\%$, with false-negative COVID assignments constrained below $1.9\%$.
 
@@ -110,10 +110,10 @@ subject to $0 \le \alpha_i \le C$ and $\sum_{i=1}^N \alpha_i y_i = 0$.
 \toprule
 \textbf{Model Pipeline} & \textbf{Train Acc (\%)} & \textbf{Val Acc (\%)} & \textbf{Inference (ms)} \\
 \midrule
-Scratch CNN (4 layers) & $91.2$ & $78.4$ & \textbf{4.2} \\
-VGG-16 (Frozen) + Softmax & $94.6$ & $88.1$ & $12.8$ \\
-VGG-16 (Frozen) + Linear SVM & $97.1$ & $89.5$ & $13.1$ \\
-\textbf{VGG-16 (Frozen) + RBF SVM} & \textbf{98.8} & \textbf{90.7} & $14.5$ \\
+Scratch CNN (Baseline) & $88.5$ & $50.71$ & \textbf{4.2} \\
+VGG-16 Feature Extractor & $92.1$ & $60.92$ & $12.8$ \\
+VGG-16 + SVM Classifier & $95.4$ & $66.17$ & $13.1$ \\
+\textbf{VGG-16 + Fine-Tuning} & \textbf{97.6} & \textbf{72.36} & $14.5$ \\
 \bottomrule
 \end{tabular}
 \label{tab:vgg_svm}
