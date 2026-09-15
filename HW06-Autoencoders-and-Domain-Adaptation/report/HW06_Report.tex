@@ -31,7 +31,7 @@ Student ID: 810100224}
 \maketitle
 
 \begin{abstract}
-Real-world deep learning deployments face severe distribution shifts between source training distributions and target operational domains. In this coursework, we explore two advanced unsupervised learning paradigms: (1) Unsupervised Domain Adaptation (UDA) via Domain-Adversarial Neural Networks (DANN) utilizing a Gradient Reversal Layer (GRL) to align feature distributions between clean MNIST digits and colored MNIST-M images; and (2) Deep Variational Autoencoders for medical imaging (EndoVAE), trained to reconstruct endoscopic colonoscopy polyp frames, disentangle morphological latent manifolds, and facilitate downstream lesion classification. In the domain adaptation task, the DANN framework elevates target domain accuracy on MNIST-M from $54.2\%$ (source-only baseline) to $82.6\%$, demonstrating effective suppression of domain-specific noise. In medical endoscopic analysis, EndoVAE achieves a Structural Similarity Index (SSIM) of $0.871$ and Mean Squared Error (MSE) of $0.012$, producing smooth latent space interpolations and compact diagnostic representations.
+Real-world deep learning deployments face severe distribution shifts between source training distributions and target operational domains. In this coursework, we explore two advanced unsupervised learning paradigms: (1) Unsupervised Domain Adaptation (UDA) via Domain-Adversarial Neural Networks (DANN) utilizing a Gradient Reversal Layer (GRL) to align feature distributions between clean MNIST digits and colored MNIST-M images; and (2) Deep Variational Autoencoders for medical imaging (EndoVAE), trained to reconstruct endoscopic colonoscopy polyp frames, disentangle morphological latent manifolds, and facilitate downstream lesion classification. In the domain adaptation task, the DANN framework elevates target domain accuracy on MNIST-M from $54.2\%$ (source-only baseline) to $82.6\%$, demonstrating effective suppression of domain-specific noise. In medical endoscopic analysis, EndoVAE achieves a Mean PSNR of $17.38\text{ dB}$, Mean SSIM of $0.482$, and downstream polyp detection accuracy of $98.75\%$ (AUC: $0.9962$), producing smooth latent space interpolations and compact diagnostic representations.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -105,9 +105,9 @@ Differentiable sampling is achieved via the Reparameterization Trick: $\mathbf{z
 \subsection{Empirical Reconstruction and Latent Traversal}
 EndoVAE is trained on colonoscopy video frames containing diverse polyp morphologies (pedunculated, sessile, and flat adenomas). As illustrated in Fig.~\ref{fig:endovae}:
 \begin{itemize}
-    \item Reconstruction fidelity: SSIM $= 0.871$, PSNR $= 28.4\text{ dB}$, MSE $= 0.012$.
+    \item Reconstruction fidelity: PSNR $= 17.38\text{ dB}$, SSIM $= 0.482$ across 50 test endoscopy frames.
     \item Latent Manifold: Linear interpolations between disparate polyp embeddings reveal smooth geometric morphing without visual artifacts, confirming absence of posterior collapse.
-    \item Downstream Detection: Training a lightweight classification probe on the frozen $32$-dimensional latent embeddings yields $91.3\%$ sensitivity for polyp presence.
+    \item Downstream Detection: Training a lightweight classification probe on the frozen $32$-dimensional latent embeddings yields $98.75\%$ test accuracy and $0.9962$ AUC for polyp detection.
 \end{itemize}
 
 \section{Conclusion}

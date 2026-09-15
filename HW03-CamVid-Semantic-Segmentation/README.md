@@ -18,7 +18,7 @@ This module implements a lightweight, computationally efficient encoder-decoder 
 ### 3. Training & Evaluation
 - **Dataset**: CamVid 12-class urban driving scenes (Road, Building, Car, Pedestrian, Tree, Sky, etc.).
 - **Schedule**: Optimized over an extensive 100-epoch regimen with cosine learning rate scheduling and inverse frequency class weighting.
-- **Results**: Mean Intersection over Union (mIoU) of $62.8\%$ and global pixel accuracy of $88.3\%$.
+- **Results**: Validation pixel accuracy of $88.05\%$, validation Dice of $60.13\%$, and validation mIoU of $50.08\%$ (training mIoU $78.62\%$).
 
 ---
 

@@ -31,7 +31,7 @@ Student ID: 810100224}
 \maketitle
 
 \begin{abstract}
-Semantic scene parsing represents a core requirement for autonomous navigation, requiring simultaneous high-level category recognition and pixel-accurate boundary delineation. In this coursework, we design, implement, and train a lightweight, computationally efficient encoder-decoder semantic segmentation network based on Depthwise Separable Convolutions. The model is rigorously benchmarked on the Cambridge-driving Labeled Video Database (CamVid) across 12 distinct urban classes (Road, Building, Car, Pedestrian, Tree, Sky, SignSymbol, etc.) over an extensive 100-epoch training schedule. By decomposing standard $3 \times 3$ spatial convolutions into depthwise spatial filtering followed by $1 \times 1$ pointwise projections, we achieve an $8.2\times$ reduction in floating point Multiply-Accumulate operations (MACs) while maintaining competitive dense prediction capability. The final model achieves a mean Intersection over Union (mIoU) of $62.8\%$ and pixel accuracy of $88.3\%$ on held-out test frames, demonstrating excellent boundary adherence on slender structures such as pedestrians and traffic poles.
+Semantic scene parsing represents a core requirement for autonomous navigation, requiring simultaneous high-level category recognition and pixel-accurate boundary delineation. In this coursework, we design, implement, and train a lightweight, computationally efficient encoder-decoder semantic segmentation network based on Depthwise Separable Convolutions. The model is rigorously benchmarked on the Cambridge-driving Labeled Video Database (CamVid) across 12 distinct urban classes (Road, Building, Car, Pedestrian, Tree, Sky, SignSymbol, etc.) over an extensive 100-epoch training schedule. By decomposing standard $3 \times 3$ spatial convolutions into depthwise spatial filtering followed by $1 \times 1$ pointwise projections, we achieve an $8.2\times$ reduction in floating point Multiply-Accumulate operations (MACs) while maintaining competitive dense prediction capability. The final model achieves a validation pixel accuracy of $88.05\%$, validation Dice of $60.13\%$, and validation mIoU of $50.08\%$ (training mIoU $78.62\%$) on held-out test frames, demonstrating excellent boundary adherence on slender structures such as pedestrians and traffic poles.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -122,8 +122,8 @@ Sidewalk & $76.8$ & SignSymbol & $48.3$ \\
 Tree & $78.1$ & ColumnPole & $39.5$ \\
 Car & $82.7$ & Void / Other & $11.0$ \\
 \midrule
-\multicolumn{2}{l}{\textbf{Mean IoU (mIoU)}} & \multicolumn{2}{c}{\textbf{62.8\%}} \\
-\multicolumn{2}{l}{\textbf{Global Pixel Accuracy}} & \multicolumn{2}{c}{\textbf{88.3\%}} \\
+\multicolumn{2}{l}{\textbf{Validation mIoU}} & \multicolumn{2}{c}{\textbf{50.08\%}} \\
+\multicolumn{2}{l}{\textbf{Validation Pixel Accuracy}} & \multicolumn{2}{c}{\textbf{88.05\%}} \\
 \bottomrule
 \end{tabular}
 \label{tab:camvid_iou}

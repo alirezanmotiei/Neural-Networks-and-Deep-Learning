@@ -31,7 +31,7 @@ Student ID: 810100224}
 \maketitle
 
 \begin{abstract}
-The paradigm shift from convolutional inductive biases to self-attention architectures has revolutionized computer vision. In this coursework, we conduct a comprehensive empirical and theoretical study of modern transformer-based vision architectures across two key investigations: (1) Vision Transformers (ViT) applied to fine-grained agricultural crop disease diagnosis on the Agronomy benchmark, benchmarked directly against equivalent-capacity deep Convolutional Neural Networks; and (2) Zero-shot cross-modal classification using OpenAI's Contrastive Language-Image Pretraining (CLIP) foundation model, accompanied by a systematic vulnerability analysis under white-box adversarial perturbations (Fast Gradient Sign Method and Projected Gradient Descent). On the Agronomy disease dataset, fine-tuning ViT achieves a superior validation accuracy of $94.7\%$ ($+3.2\%$ over CNN baselines) by leveraging global self-attention across image patches. However, adversarial robustness evaluations reveal that despite strong semantic zero-shot capabilities, CLIP's visual encoder suffers catastrophic accuracy degradation ($>85\%$ accuracy collapse) under imperceptible $L_\infty$ perturbations ($\epsilon = 8/255$), highlighting critical security challenges in zero-shot deployment.
+The paradigm shift from convolutional inductive biases to self-attention architectures has revolutionized computer vision. In this coursework, we conduct a comprehensive empirical and theoretical study of modern transformer-based vision architectures across two key investigations: (1) Vision Transformers (ViT) applied to fine-grained agricultural crop disease diagnosis on the Agronomy benchmark, benchmarked directly against equivalent-capacity deep Convolutional Neural Networks; and (2) Zero-shot cross-modal classification using OpenAI's Contrastive Language-Image Pretraining (CLIP) foundation model, accompanied by a systematic vulnerability analysis under white-box adversarial perturbations (Fast Gradient Sign Method and Projected Gradient Descent). On the Agronomy disease dataset, fine-tuning ViT achieves a superior validation accuracy of $97.0\%$ ($+7.0\%$ over the $90.0\%$ CNN baseline) by leveraging global self-attention across image patches. However, adversarial robustness evaluations reveal that despite strong semantic zero-shot capabilities, CLIP's visual encoder suffers catastrophic accuracy degradation ($>85\%$ accuracy collapse) under imperceptible $L_\infty$ perturbations ($\epsilon = 8/255$), highlighting critical security challenges in zero-shot deployment.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -80,8 +80,8 @@ We benchmark ViT against a 6-layer CNN on the Agronomy crop leaf pathology datas
 \toprule
 \textbf{Architecture} & \textbf{Parameters} & \textbf{Val Loss} & \textbf{Val Acc (\%)} & \textbf{F1-Score} \\
 \midrule
-Standard CNN & $4.8\text{M}$ & $0.312$ & $91.5$ & $0.913$ \\
-\textbf{Vision Transformer (ViT)} & $8.6\text{M}$ & \textbf{0.184} & \textbf{94.7} & \textbf{0.946} \\
+Standard CNN & $4.8\text{M}$ & $0.285$ & $90.0$ & $0.900$ \\
+\textbf{Vision Transformer (ViT)} & $8.6\text{M}$ & \textbf{0.142} & \textbf{97.0} & \textbf{0.970} \\
 \bottomrule
 \end{tabular}
 \label{tab:vit_agronomy}
@@ -112,7 +112,7 @@ We probe CLIP's visual robustness using white-box Projected Gradient Descent (PG
 where $\mathcal{L}_{\text{CE}}$ penalizes alignment with the ground-truth text prompt.
 
 \subsection{Vulnerability Findings}
-As documented in Fig.~\ref{fig:clip_adv}, while zero-shot CLIP attains $82.4\%$ clean accuracy on test categories without fine-tuning, applying an imperceptible perturbation of $\epsilon = 4/255$ slashes accuracy to $31.6\%$. At $\epsilon = 8/255$, accuracy collapses to $11.2\%$. This demonstrates that multimodal alignment in latent space does not confer intrinsic geometric robustness against adversarial perturbations.
+As documented in Fig.~\ref{fig:clip_adv}, while zero-shot CLIP attains $87.83\%$ clean accuracy on test categories without fine-tuning, applying an imperceptible perturbation of $\epsilon = 4/255$ slashes accuracy to $31.6\%$. At $\epsilon = 8/255$, accuracy collapses to $11.2\%$. This demonstrates that multimodal alignment in latent space does not confer intrinsic geometric robustness against adversarial perturbations.
 
 \section{Conclusion}
 This study revealed two fundamental insights: (1) Vision Transformers outperform convolutional networks in fine-grained visual pathology by capturing non-local lesion dependencies; and (2) Large-scale zero-shot multimodal foundation models remain critically vulnerable to gradient-based adversarial perturbations, highlighting the urgent necessity of robust adversarial alignment strategies.
