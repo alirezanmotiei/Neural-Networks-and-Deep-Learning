@@ -8,7 +8,7 @@ This module implements a lightweight, computationally efficient encoder-decoder 
 
 ### 1. Depthwise Separable Convolutions
 - **Factorization**: Decomposing standard $3 \times 3$ convolutions into depthwise spatial filtering ($D_K \times D_K \times M$) followed by $1 \times 1$ pointwise channel projection ($M \times N$).
-- **Computational Efficiency**: Achieves an $8.2\times$ reduction in floating-point Multiply-Accumulate operations (MACs), making the network suitable for real-time edge robotics.
+- **Computational Efficiency**: Achieves an analytical $\sim 8.2\times$ reduction in floating-point Multiply-Accumulate operations (MACs) via kernel factorization ($\frac{1}{N} + \frac{1}{D_K^2}$), making the network suitable for real-time edge robotics.
 
 ### 2. U-Net Topology & Multi-Scale Features
 - 4 downsampling stages contracting spatial resolution while expanding feature channels ($32 \to 64 \to 128 \to 256$).

@@ -69,6 +69,7 @@ The relative operational reduction ratio is:
 \begin{equation}
 \frac{\text{Cost}_{\text{separable}}}{\text{Cost}_{\text{standard}}} = \frac{1}{N} + \frac{1}{D_K^2} \approx \frac{1}{9} \quad (\text{for } D_K=3, N \gg 1)
 \end{equation}
+For $3 \times 3$ kernels across typical intermediate feature depths ($N \in [64, 256]$), this factorized formulation yields an analytical $\approx 8.2\times$ reduction in floating point Multiply-Accumulate (MAC) operations compared to standard dense convolutions.
 
 \begin{figure}[htbp]
 \centering
@@ -109,24 +110,19 @@ Performance is assessed using Mean Intersection over Union (mIoU) and Global Pix
 \end{equation}
 
 \begin{table}[htbp]
-\caption{Per-Class IoU (\%) on CamVid Test Set}
+\caption{Quantitative Performance on CamVid Benchmark (100 Epochs)}
 \centering
-\begin{tabular}{@{}lc|lc@{}}
+\begin{tabular}{@{}lcc@{}}
 \toprule
-\textbf{Class} & \textbf{IoU (\%)} & \textbf{Class} & \textbf{IoU (\%)} \\
+\textbf{Evaluation Metric} & \textbf{Training (Epoch 100)} & \textbf{Validation (Epoch 100)} \\
 \midrule
-Sky & $91.4$ & Pedestrian & $54.2$ \\
-Building & $84.2$ & Fence & $41.8$ \\
-Road & $94.6$ & Bicyclist & $51.0$ \\
-Sidewalk & $76.8$ & SignSymbol & $48.3$ \\
-Tree & $78.1$ & ColumnPole & $39.5$ \\
-Car & $82.7$ & Void / Other & $11.0$ \\
-\midrule
-\multicolumn{2}{l}{\textbf{Validation mIoU}} & \multicolumn{2}{c}{\textbf{50.08\%}} \\
-\multicolumn{2}{l}{\textbf{Validation Pixel Accuracy}} & \multicolumn{2}{c}{\textbf{88.05\%}} \\
+Global Pixel Accuracy & $94.62\%$ & $88.05\%$ \\
+Dice Similarity Coefficient & $86.85\%$ & $60.13\%$ \\
+Mean IoU (mIoU) & $78.62\%$ & $50.08\%$ \\
+Categorical Cross-Entropy Loss & $0.2809$ & $0.5380$ \\
 \bottomrule
 \end{tabular}
-\label{tab:camvid_iou}
+\label{tab:camvid_benchmarks}
 \end{table}
 
 \subsection{Qualitative Analysis}
