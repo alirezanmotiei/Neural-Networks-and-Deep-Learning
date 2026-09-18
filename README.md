@@ -30,17 +30,17 @@ An enterprise-grade, comprehensive repository containing theoretical formulation
 | **HW01: Foundations & Fraud PR-Curve** | **HW02: Chest X-Ray COVID-19 CNN** |
 | :---: | :---: |
 | ![HW01 Fraud PR-Curve](assets/previews/preview_hw01_fraud_pr_curve.png) | ![HW02 COVID Confusion Matrix](assets/previews/preview_hw02_covid_xray_cnn.png) |
-| *Imbalanced Fraud Detection (PR-AUC $>0.83$)* | *COVID-19 Radiography Diagnosis ($98.1\%$ Recall)* |
+| *Imbalanced Fraud Detection (PR-AUC $>0.83$)* | *COVID-19 Radiography Diagnosis ($98.04\%$ Recall, $95.61\%$ Acc)* |
 
 | **HW03: CamVid Dense Semantic Masks** | **HW04: Flickr8k Multimodal Captioning** |
 | :---: | :---: |
 | ![HW03 CamVid Masks](assets/previews/preview_hw03_camvid_masks.png) | ![HW04 Captioning Samples](assets/previews/preview_hw04_captioning_samples.png) |
-| *Depthwise Separable U-Net ($62.8\%$ mIoU, 100 Epochs)* | *ResNet-50 + LSTM Text Generation (BLEU-1: $0.612$)* |
+| *Depthwise Separable U-Net ($50.08\%$ mIoU, $88.05\%$ Acc, $8.2\times$ MAC Reduction)* | *ResNet-50 + LSTM Text Generation (Beam BLEU-1: $0.2139$, BLEU-4: $0.4152$)* |
 
 | **HW05: ViT Attention on Crop Leaves** | **HW06: EndoVAE Endoscopic Polyp Reconstructions** |
 | :---: | :---: |
 | ![HW05 ViT Attention](assets/previews/preview_hw05_vit_attention.png) | ![HW06 EndoVAE Reconstruction](assets/previews/preview_hw06_endovae_polyp.png) |
-| *Vision Transformer Attention Rollout ($94.7\%$ Acc)* | *Latent Manifold Traversal (SSIM $= 0.871$)* |
+| *Vision Transformer Attention Rollout ($97.0\%$ Acc, $+7.0\%$ over CNN)* | *Latent Manifold Traversal (SSIM: $0.482$, Polyp Acc: $98.75\%$)* |
 
 | **HWE: Adversarial Accuracy Degradation** | **HWE: End-to-End Persian Image Captioning** |
 | :---: | :---: |
@@ -73,7 +73,7 @@ Neural-Networks-and-Deep-Learning/
 | **[HW04](HW04-Sequence-Modeling-and-Clinical-NLP/)** | ResNet-50 + LSTM Captioner, Stacked GRU, ADF & ACF/PACF | Flickr8k, ICU Clinical Time-Series | Beam BLEU-1: **$0.2139$**, BLEU-4: **$0.4152$**, Clinical ICU Models | [README](HW04-Sequence-Modeling-and-Clinical-NLP/README.md) · [LaTeX Report](HW04-Sequence-Modeling-and-Clinical-NLP/report/HW04_Report.tex) |
 | **[HW05](HW05-Vision-Transformers-and-ZeroShot/)** | Vision Transformers (ViT), Zero-Shot CLIP, FGSM, PGD | Agronomy Crop Pathology, Multi-Modal Benchmarks | ViT Val Acc: **$97.0\%$** ($+7.0\%$ over CNN $90.0\%$), CLIP Clean: **$87.83\%$** (Defended: $85.39\%$) | [README](HW05-Vision-Transformers-and-ZeroShot/README.md) · [LaTeX Report](HW05-Vision-Transformers-and-ZeroShot/report/HW05_Report.tex) |
 | **[HW06](HW06-Autoencoders-and-Domain-Adaptation/)** | DANN (Gradient Reversal Layer), Variational Autoencoders (EndoVAE) | MNIST $\to$ MNIST-M, Endoscopy Colonoscopy Frames | MNIST: **$98.98\%$** vs MNIST-M: **$56.63\%$**, EndoVAE SSIM: **$0.482$**, Polyp Acc: **$98.75\%$** (AUC: $0.9962$) | [README](HW06-Autoencoders-and-Domain-Adaptation/README.md) · [LaTeX Report](HW06-Autoencoders-and-Domain-Adaptation/report/HW06_Report.tex) |
-| **[HWE](HWE-Adversarial-Robustness-and-Multimodal-Captioning/)** | ResNet-18 vs. ViT Adversarial Probing, Persian CNN-LSTM Captioner | CIFAR-100, Oxford Flowers-102, Persian Captions | ViT Robustness: **$33.4\%$** vs. ResNet **$24.1\%$** ($\\epsilon=8/255$), Persian BLEU-1: **$0.548$** | [README](HWE-Adversarial-Robustness-and-Multimodal-Captioning/README.md) · [LaTeX Report](HWE-Adversarial-Robustness-and-Multimodal-Captioning/report/HWE_Report.tex) |
+| **[HWE](HWE-Adversarial-Robustness-and-Multimodal-Captioning/)** | ResNet-18 vs. ViT Adversarial Probing, Persian CNN-LSTM Captioner | CIFAR-100, Oxford Flowers-102, Persian Captions | ViT Robustness: **$33.4\%$** vs. ResNet **$24.1\%$** ($\epsilon=8/255$), Persian BLEU-1: **$0.2445$** (BLEU-4: **$0.0461$**) | [README](HWE-Adversarial-Robustness-and-Multimodal-Captioning/README.md) · [LaTeX Report](HWE-Adversarial-Robustness-and-Multimodal-Captioning/report/HWE_Report.tex) |
 
 ---
 
@@ -148,12 +148,12 @@ jupyter lab
 
 ### ساختار و اهداف پژوهشی پروژه‌ها:
 ۱. **مبانی شبکه‌های عصبی (HW01)**: مقایسه تحلیلی پرسپترون روزنبلات و آدالاین ویدرو-هاف، پیاده‌سازی الگوریتم پس‌انتشار خطا، تشخیص تقلب در کارت‌های اعتباری تحت عدم تعادل شدید داده‌ها با معیار PR-AUC، رگرسیون غیرخطی مقاومت بتن و یادگیری بازنمایی خودنظارتی به کمک اتوانکودر بر روی داده‌های MNIST.
-۲. **شبکه‌های پیچشی عمیق و یادگیری انتقالی (HW02)**: طراحی معماری CNN اختصاصی با تکنیک‌های منظم‌سازی پیشرفته (Batch Normalization و Spatial Dropout) جهت تشخیص سه‌کلاسه بیماری کووید-۱۹ از تصاویر رادیوگرافی قفسه سینه با حساسیت ۹۸.۱٪، و به‌کارگیری نمایش‌های عمیق لایه‌های ماقبل آخر VGG-16 پیش‌آموزش‌دیده در ترکیب با ماشین‌های بردار پشتیبان (SVM).
-۳. **سگمنتیشن معنایی صحنه‌های شهری بر روی پایگاه CamVid (HW03)**: طراحی و آموزش ۱۰۰ دوره‌ای یک شبکه سبک‌وزن U-Net بر پایه کانولوشن‌های تفکیک‌پذیر عمقی (Depthwise Separable Convolutions)، که کاهش ۸.۲ برابری در محاسبات و دستیابی به mIoU معادل ۶۲.۸٪ را روی ۱۲ کلاس شهری محقق می‌سازد.
+۲. **شبکه‌های پیچشی عمیق و یادگیری انتقالی (HW02)**: طراحی معماری CNN اختصاصی با تکنیک‌های منظم‌سازی پیشرفته (Batch Normalization و Spatial Dropout) جهت تشخیص سه‌کلاسه بیماری کووید-۱۹ از تصاویر رادیوگرافی قفسه سینه با دقت ۹۵.۶۱٪ و حساسیت ۹۸.۰۴٪، و به‌کارگیری نمایش‌های عمیق لایه‌های ماقبل آخر VGG-16 پیش‌آموزش‌دیده در ترکیب با ماشین‌های بردار پشتیبان (SVM).
+۳. **سگمنتیشن معنایی صحنه‌های شهری بر روی پایگاه CamVid (HW03)**: طراحی و آموزش ۱۰۰ دوره‌ای یک شبکه سبک‌وزن U-Net بر پایه کانولوشن‌های تفکیک‌پذیر عمقی (Depthwise Separable Convolutions)، که کاهش ۸.۲ برابری در محاسبات، دقت پیکسلی ۸۸.۰۵٪ و دستیابی به mIoU معادل ۵۰.۰۸٪ را روی ۱۲ کلاس شهری محقق می‌سازد.
 ۴. **مدل‌سازی دنباله‌ای و یادگیری چندوجهی (HW04)**: تولید خودکار زیرنویس برای تصاویر به کمک ادغام ResNet-50 و دیکودر بازگشتی LSTM، و پیش‌بینی چندمرحله‌ای سری‌های زمانی علائم حیاتی بیماران در بخش مراقبت‌های ویژه (ICU) با واحدهای بازگشتی دروازه‌ای (GRU).
-۵. **ترنسفورمرهای بینایی و مدل‌های پایه‌ای Zero-Shot (HW05)**: پیاده‌سازی Vision Transformer (ViT) بر پایه مکانیزم خودتوجهی چندسر (MHSA) برای تشخیص بیماری‌های برگ گیاهان در پایگاه Agronomy (با برتری ۳.۲ درصدی نسبت به CNN)، و تحلیل آسیب‌پذیری خصمانه مدل پایه‌ای چندوجهی CLIP در طبقه‌بندی صفر-شات.
+۵. **ترنسفورمرهای بینایی و مدل‌های پایه‌ای Zero-Shot (HW05)**: پیاده‌سازی Vision Transformer (ViT) بر پایه مکانیزم خودتوجهی چندسر (MHSA) برای تشخیص بیماری‌های برگ گیاهان در پایگاه Agronomy (با دقت ۹۷.۰٪ و برتری ۷.۰ درصدی نسبت به CNN با دقت ۹۰.۰٪)، و تحلیل آسیب‌پذیری خصمانه مدل پایه‌ای چندوجهی CLIP در طبقه‌بندی صفر-شات.
 ۶. **انطباق دامنه بدون نظارت و اتوانکودرهای متغیر (HW06)**: پیاده‌سازی شبکه انطباق دامنه خصمانه (DANN) با لایه معکوس‌کننده گرادیان (GRL) جهت انتقال دانش از داده‌های MNIST به MNIST-M، و طراحی EndoVAE برای بازسازی فریم‌های پولیپ روده در تصاویر کولونوسکوپی با حفظ توپولوژی مخاطی.
-۷. **مباحث پیشرفته: حملات متخاصم و تولید زیرنویس فارسی (HWE)**: بررسی آسیب‌پذیری معماری‌های کانولوشنی در برابر ترنسفورمرها تحت حملات FGSM و PGD، و ساخت پایپ‌لاین کامل تولید توضیحات متنی فارسی برای تصاویر به کمک ابزارهای پردازش زبان هضم (Hazm)، شکل‌دهنده‌های دوجهته و شبکه‌های بازگشتی.
+۷. **مباحث پیشرفته: حملات متخاصم و تولید زیرنویس فارسی (HWE)**: بررسی آسیب‌پذیری معماری‌های کانولوشنی در برابر ترنسفورمرها تحت حملات FGSM و PGD، و ساخت پایپ‌لاین کامل تولید توضیحات متنی فارسی برای تصاویر با امتیاز BLEU-1 معادل ۰.۲۴۴۵ به کمک ابزارهای پردازش زبان هضم (Hazm)، شکل‌دهنده‌های دوجهته و شبکه‌های بازگشتی.
 
 </div>
 
