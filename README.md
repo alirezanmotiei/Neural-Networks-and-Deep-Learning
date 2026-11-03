@@ -35,7 +35,7 @@ An enterprise-grade, comprehensive repository containing theoretical formulation
 | **HW03: CamVid Dense Semantic Masks** | **HW04: Flickr8k Multimodal Captioning** |
 | :---: | :---: |
 | ![HW03 CamVid Masks](assets/previews/preview_hw03_camvid_masks.png) | ![HW04 Captioning Samples](assets/previews/preview_hw04_captioning_samples.png) |
-| *Depthwise Separable U-Net ($50.08\%$ mIoU, $88.05\%$ Acc, Analytical $8.2\times$ MAC Reduction)* | *ResNet-50 + LSTM Text Generation (Beam BLEU-1: $0.2139$, BLEU-4: $0.4152$)* |
+| *Depthwise Separable U-Net ($50.08\%$ mIoU, $88.05\%$ Acc, Analytical $8.2\times$ MAC Reduction)* | *ResNet-50 + LSTM Text Generation (Beam BLEU-1: $0.2139$, BLEU-4: $0.0557$)* |
 
 | **HW05: ViT Attention on Crop Leaves** | **HW06: EndoVAE Endoscopic Polyp Reconstructions** |
 | :---: | :---: |
@@ -70,7 +70,7 @@ Neural-Networks-and-Deep-Learning/
 | **[HW01](HW01-Foundations-Perceptron-Adaline-MLP/)** | Perceptron, Adaline, Deep MLP, Autoencoder Bottlenecks | IRIS, Credit Card Fraud, Concrete, MNIST | Fraud Acc: **$94.93\%$** (Rec: $89.86\%$), Concrete MAE: **$7.61\text{ MPa}$**, MNIST Latent Acc: **$81.50\%$** | [README](HW01-Foundations-Perceptron-Adaline-MLP/README.md) · [LaTeX Report](HW01-Foundations-Perceptron-Adaline-MLP/report/HW01_Report.tex) |
 | **[HW02](HW02-CNN-Covid19-and-Transfer-Learning/)** | Deep Multi-Scale CNN, Pretrained VGG-16, Linear/RBF SVM | COVID-19 Radiography, Vehicle Classification | COVID Acc: **$95.61\%$** (Recall: $98.04\%$), VGG-16 FT Acc: **$72.36\%$** | [README](HW02-CNN-Covid19-and-Transfer-Learning/README.md) · [LaTeX Report](HW02-CNN-Covid19-and-Transfer-Learning/report/HW02_Report.tex) |
 | **[HW03](HW03-CamVid-Semantic-Segmentation/)** | Depthwise Separable Convolutions, Dilated U-Net | CamVid Driving (12 Classes) | Val Acc: **$88.05\%$**, Val Dice: **$60.13\%$**, Val mIoU: **$50.08\%$**, Analytical $8.2\times$ MAC Reduction | [README](HW03-CamVid-Semantic-Segmentation/README.md) · [LaTeX Report](HW03-CamVid-Semantic-Segmentation/report/HW03_Report.tex) |
-| **[HW04](HW04-Sequence-Modeling-and-Clinical-NLP/)** | ResNet-50 + LSTM Captioner, Stacked GRU, ADF & ACF/PACF | Flickr8k, ICU Clinical Time-Series | Beam BLEU-1: **$0.2139$**, BLEU-4: **$0.4152$**, Clinical ICU Models | [README](HW04-Sequence-Modeling-and-Clinical-NLP/README.md) · [LaTeX Report](HW04-Sequence-Modeling-and-Clinical-NLP/report/HW04_Report.tex) |
+| **[HW04](HW04-Sequence-Modeling-and-Clinical-NLP/)** | ResNet-50 + LSTM Captioner, Stacked GRU, ADF & ACF/PACF | Flickr8k, ICU Clinical Time-Series | Beam BLEU-1: **$0.2139$**, BLEU-4: **$0.0557$**, Clinical ICU Models | [README](HW04-Sequence-Modeling-and-Clinical-NLP/README.md) · [LaTeX Report](HW04-Sequence-Modeling-and-Clinical-NLP/report/HW04_Report.tex) |
 | **[HW05](HW05-Vision-Transformers-and-ZeroShot/)** | Vision Transformers (ViT), Zero-Shot CLIP, FGSM, PGD | Agronomy Crop Pathology, Multi-Modal Benchmarks | ViT Val Acc: **$97.0\%$** ($+7.0\%$ over CNN $90.0\%$), CLIP Clean: **$87.83\%$** (Defended: $85.39\%$) | [README](HW05-Vision-Transformers-and-ZeroShot/README.md) · [LaTeX Report](HW05-Vision-Transformers-and-ZeroShot/report/HW05_Report.tex) |
 | **[HW06](HW06-Autoencoders-and-Domain-Adaptation/)** | DANN (Gradient Reversal Layer), Variational Autoencoders (EndoVAE) | MNIST $\to$ MNIST-M, Endoscopy Colonoscopy Frames | MNIST: **$98.98\%$** vs MNIST-M: **$56.63\%$**, EndoVAE SSIM: **$0.482$**, Polyp Acc: **$98.75\%$** (AUC: $0.9962$) | [README](HW06-Autoencoders-and-Domain-Adaptation/README.md) · [LaTeX Report](HW06-Autoencoders-and-Domain-Adaptation/report/HW06_Report.tex) |
 | **[HWE](HWE-Adversarial-Robustness-and-Multimodal-Captioning/)** | ResNet-18 vs. ViT Adversarial Probing, Persian CNN-LSTM Captioner | CIFAR-100, Oxford Flowers-102, Persian Captions | ViT Robustness: **$33.4\%$** vs. ResNet **$24.1\%$** ($\epsilon=8/255$), Persian BLEU-1: **$0.2445$** (BLEU-4: **$0.0461$**) | [README](HWE-Adversarial-Robustness-and-Multimodal-Captioning/README.md) · [LaTeX Report](HWE-Adversarial-Robustness-and-Multimodal-Captioning/report/HWE_Report.tex) |
@@ -94,7 +94,7 @@ Neural-Networks-and-Deep-Learning/
 - **100-Epoch Optimization**: Implements cosine learning rate annealing and class-weighted cross-entropy to achieve $88.05\%$ pixel accuracy, $60.13\%$ Dice, and $50.08\%$ mIoU on validation driving scenes (training mIoU $78.62\%$).
 
 ### Module 4: Sequence Modeling & Clinical Time-Series
-- **Multimodal Language Decoders**: Pairs ResNet-50 visual backbones with autoregressive LSTM decoders using teacher forcing, achieving a test BLEU-1 of $0.2139$ and BLEU-4 of $0.4152$ with beam search ($k=5$) on Flickr8k.
+- **Multimodal Language Decoders**: Pairs ResNet-50 visual backbones with autoregressive LSTM decoders using teacher forcing, achieving a test BLEU-1 of $0.2139$ and BLEU-4 of $0.0557$ with beam search ($k=5$) on Flickr8k.
 - **Clinical ICU Telemetry**: Applies Augmented Dickey-Fuller (ADF) stationarity testing and ACF/PACF autocorrelation analysis, followed by stacked GRUs for multi-step vital sign trajectory forecasting (RMSE $= 0.084$).
 
 ### Module 5: Vision Transformers & Zero-Shot CLIP
