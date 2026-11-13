@@ -83,7 +83,7 @@ As visualized in Fig.~\ref{fig:adv_curves}, Vision Transformers display superior
 \subsection{Persian Linguistic Pipeline and Preprocessing}
 Persian text generation poses distinct linguistic challenges:
 \begin{itemize}
-    \item \textbf{Morphology}: Inflectional affixes, compound verbs, and the Zero-Width Non-Joiner (ZWNJ / نیم‌فاصله). We employ the Hazm morphological tokenizer for normalization and lemma extraction.
+    \item \textbf{Morphology}: Inflectional affixes, compound verbs, and the Zero-Width Non-Joiner (ZWNJ, pseudo-space character). We employ the Hazm morphological tokenizer for normalization and lemma extraction.
     \item \textbf{Bidirectional Text Processing}: Correct character shaping and right-to-left layout rendering are maintained via \texttt{arabic\_reshaper} and \texttt{python-bidi}.
     \item \textbf{Vocabulary Construction}: Thresholding token occurrences at frequency $\ge 3$ creates a vocabulary of $V = 6,842$ tokens including special tokens: \texttt{<pad>}, \texttt{<start>}, \texttt{<end>}, \texttt{<unk>}.
 \end{itemize}

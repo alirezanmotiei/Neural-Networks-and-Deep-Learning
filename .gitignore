@@ -39,3 +39,15 @@ ENV/
 Thumbs.db
 desktop.ini
 ~$*
+
+# LaTeX build artifacts (keep compiled PDFs)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
