@@ -19,7 +19,7 @@ An enterprise-grade, comprehensive repository containing theoretical formulation
 | **Course** | **Neural Networks and Deep Learning (NNDL)** |
 | **Semester** | Spring 1404 / Spring 2025 (بهار ۱۴۰۴) |
 | **Instructor** | **Dr. Ahmad Kalhor** (دکتر احمد کلهر) |
-| **Author & Maintainer** | **Alireza Najafi Motiei** (علیرضا نجفی مطیعی) — Student ID: `810100224` |
+| **Author & Maintainer** | **Alireza Najafi Motiei** (علیرضا نجفی مطیعی) - Student ID: `810100224` |
 | **Primary Frameworks** | PyTorch, TensorFlow/Keras, HuggingFace Transformers, Torchattacks, Hazm |
 | **Repository License** | [MIT License](LICENSE) |
 
